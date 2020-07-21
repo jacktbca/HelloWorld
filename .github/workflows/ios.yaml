@@ -1,5 +1,5 @@
 on: pull_request
-name: Unit & UI Tests
+name: iOS CI/CD
 jobs:
   test:
     name: Test
