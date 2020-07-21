@@ -19,10 +19,8 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-      - name: Goto Android folder
-        run: cd android-kt/
       - name: Unit tests
-        run: bash ./gradlew test --stacktrace
+        run: cd android-kt/ && bash ./gradlew test --stacktrace
 
   apk:
     name: Generate APK
@@ -34,12 +32,10 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-      - name: Goto Android folder
-        run: cd android-kt/
       - name: Build debug APK
-        run: bash ./gradlew assembleDebug --stacktrace
+        run: cd android-kt/ && bash ./gradlew assembleDebug --stacktrace
       - name: Upload APK
         uses: actions/upload-artifact@v1
         with:
           name: app
-          path: app/build/outputs/apk/debug/app-debug.apk
+          path: android-kt/app/build/outputs/apk/debug/app-debug.apk
