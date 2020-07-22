@@ -42,7 +42,7 @@ jobs:
       - name: Lint results
         uses: actions/upload-artifact@v1
         with:
-          name: app
+          name: lint-result
           path: android-kt/app/build/reports/lint-results-debug.html
 
   apk:
